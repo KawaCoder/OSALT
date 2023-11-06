@@ -2,11 +2,12 @@
 OSALT: Open-source Scripting Automation Linux Toolkit is a tool that helps with scheduled scripting automation on Linux systems
 The code will be in bash.
 ### TODO:
-#### Coding
-- [ ] Set up statup script
+#### Coding features
+- [x] Set up statup script
   - [x] Add script to config.json
   - [x] Copy script to config directory and change rights
-  - [ ] Create systemd service/set up run on start?
+  - [x] Create systemd service
+  - [x] Enable service
 - [ ] Set up shutdown script
   - [x] Add script to config.json
   - [x] Copy script to config directory and change rights
@@ -16,11 +17,15 @@ The code will be in bash.
   - [x] Copy script to config directory and change rights
   - [ ] configure cron
 - [x] List user's scripts
-- [ ] Delete scripts
+- [x] Delete scripts
+  - [x] Remove script from folder
+  - [x] Disable systemd service
+  - [x] Delete systemd service
+- [ ] Disable script
 
 #### Other
-- [ ] See how to set up run at start (systemctl/cron/?)
-- [ ] See how to set up run ata shutdown
+- [x] See how to set up run at start (systemctl/cron/?)
+- [ ] See how to set up run at shutdown
 ```
 osalt [options] [script_name]
 
