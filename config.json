@@ -1,0 +1,10 @@
+{
+  "startup": [
+    {
+      "name": "oui.sh",
+      "path": "oui.sh"
+    }
+  ],
+  "shutdown": [],
+  "scheduled": []
+}
