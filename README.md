@@ -8,10 +8,10 @@ The code will be in bash.
   - [x] Copy script to config directory and change rights
   - [x] Create systemd service
   - [x] Enable service
-- [ ] Set up shutdown script
+- [x] Set up shutdown script
   - [x] Add script to config.json
   - [x] Copy script to config directory and change rights
-  - [ ] Create systemd service/set up run on shutdown?
+  - [x] Create systemd service/set up run on shutdown?
 - [ ] Set up scheduled script
   - [x] Add script to config.json
   - [x] Copy script to config directory and change rights
