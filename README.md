@@ -25,7 +25,7 @@ The code will be in bash.
 
 #### Other
 - [x] See how to set up run at start (systemctl/cron/?)
-- [ ] See how to set up run at shutdown
+- [x] See how to set up run at shutdown
 ```
 osalt [options] [script_name]
 
