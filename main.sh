@@ -60,22 +60,23 @@ function list_scripts(){
 function delete_script() {
     script_name="$1"
     just_file_name="$(basename "$script_name" ".sh")"
+    config_file="config.json"
 
     if [ -f "config.json" ]; then
-        config_file="config.json"
-        jq ".startup = [.startup[] | select(.name != \"$script_name\")]" "$config_file" > temp.json
-        mv temp.json "$config_file"
         script_category=""
-        if jq -r ".startup[] | select(.name == \"$script_name\")" "$config_file" > /dev/null; then
-            script_category="startup"
-        elif jq -r ".shutdown[] | select(.name == \"$script_name\")" "$config_file" > /dev/null; then
+        if jq -r ".shutdown[] | select(.name == \"$script_name\")" "$config_file" > /dev/null; then
             script_category="shutdown"
+        elif jq -r ".startup[] | select(.name == \"$script_name\")" "$config_file" > /dev/null; then
+            script_category="startup"
         elif jq -r ".scheduled[] | select(.name == \"$script_name\")" "$config_file" > /dev/null; then
             script_category="scheduled"
         else
             echo "Script \"$script_name\" not found in config.json"
             exit 1
         fi
+
+        jq ".$script_category = [.${script_category}[] | select(.name != \"$script_name\")]" "$config_file" > temp.json
+        mv temp.json "$config_file"
 
         if [ -f "$HOME/OSALT/scripts/$script_category/$script_name" ]; then
             rm "$HOME/OSALT/scripts/$script_category/$script_name"
@@ -126,9 +127,9 @@ function add_script(){
     cp "$new_script_path" "$HOME/OSALT/scripts/$option/"
     chmod +x "$HOME/OSALT/scripts/$option/$new_script_name"
 
+    just_file_name="$(basename "$new_script_name" ".sh")"
 
     if [ "$option" = "startup" ]; then
-        just_file_name="$(basename "$new_script_name" ".sh")"
         echo "
 [Unit]
 Description=$just_file_name
@@ -142,6 +143,21 @@ ExecStart=$HOME/OSALT/scripts/$option/$new_script_name
 WantedBy=default.target
         
         " >> "$HOME"/.config/systemd/user/"$just_file_name".service
+
+    elif [ "$option" = "shutdown" ]; then
+    echo "
+[Unit]
+Description=$just_file_name
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStart=$HOME/OSALT/scripts/$option/$new_script_name
+
+[Install]
+WantedBy=default.target
+" >> "$HOME"/.config/systemd/user/"$just_file_name".service
 
     fi
     systemctl --user enable "$just_file_name".service
@@ -181,8 +197,6 @@ while [ "$#" -gt 0 ]; do
             delete_script "$2"
             shift 2
             ;;
-        
-        
         
         -l|--list)
             list_scripts
