@@ -1,4 +1,13 @@
 # OSALT 🧂 (Under development)
+
+
+<p align="center">
+    <img src="https://img.shields.io/badge/100%25-Bash-black.svg?style=for-the-badge&logo=shell&logoColor=white" />&nbsp;&nbsp;
+    <a href="[https://www.mozilla.org/en-US/MPL/](https://www.gnu.org/licenses/gpl-3.0.html)">
+      <img src="https://img.shields.io/badge/License-GPL%203.0-darkgreen.svg?style=for-the-badge&logo=GNU" />
+    </a>
+  </p>
+
 OSALT: Open-source Scripting Automation Linux Toolkit is a tool that helps with scheduled scripting automation on Linux systems
 The code will be in bash.
 ### TODO:
@@ -45,3 +54,8 @@ Examples:
   osalt -d my_shutdown_script.sh
   osalt -l
 ```
+
+  
+<a href="mailto:kawacoder@duck.com">
+  <img src="https://img.shields.io/badge/Email%20me-darkred?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
