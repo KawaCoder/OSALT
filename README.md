@@ -9,8 +9,8 @@
 
 ## Table of content:
 #### [1. Todo list](https://github.com/KawaCoder/OSALT#todo)
-#### [2. Usage](https://github.com/KawaCoder/OSALT#todo)
-#### [3. Contact](https://github.com/KawaCoder/OSALT#todo)
+#### [2. Usage](https://github.com/KawaCoder/OSALT#usage)
+#### [3. Contact](https://github.com/KawaCoder/OSALT#contact)
 
 OSALT: Open-source Scripting Automation Linux Toolkit is a tool that helps with scheduled scripting automation on Linux systems
 The code will be in bash. It is an implementation of systemd.
