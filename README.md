@@ -1,8 +1,4 @@
 # OSALT 🧂 (Under development)
-## Table of content:
-#### [1. Todo list](https://github.com/KawaCoder/OSALT#todo)
-#### [2. Usage](https://github.com/KawaCoder/OSALT#todo)
-#### [3. Contact](https://github.com/KawaCoder/OSALT#todo)
 
 <p align="center">
     <img src="https://img.shields.io/badge/100%25-Bash-black.svg?style=for-the-badge&logo=shell&logoColor=white" />&nbsp;&nbsp;
@@ -10,6 +6,11 @@
       <img src="https://img.shields.io/badge/License-GPL%203.0-darkgreen.svg?style=for-the-badge&logo=GNU" />
     </a>
   </p>
+
+## Table of content:
+#### [1. Todo list](https://github.com/KawaCoder/OSALT#todo)
+#### [2. Usage](https://github.com/KawaCoder/OSALT#todo)
+#### [3. Contact](https://github.com/KawaCoder/OSALT#todo)
 
 OSALT: Open-source Scripting Automation Linux Toolkit is a tool that helps with scheduled scripting automation on Linux systems
 The code will be in bash. It is an implementation of systemd.
