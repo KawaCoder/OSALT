@@ -31,6 +31,7 @@ The code will be in bash.
   - [x] Disable systemd service
   - [x] Delete systemd service
 - [ ] Disable script
+- [ ] Set up triggered script
 
 #### Other
 - [x] See how to set up run at start (systemctl/cron/?)
